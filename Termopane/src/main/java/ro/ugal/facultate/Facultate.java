@@ -17,15 +17,26 @@ public class Facultate {
 
         List<TermopanReflectorizant> reflectorizantList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            reflectorizantList.add(new TermopanReflectorizant("Material" + i, i + 1, "TipSticla" + i, "Film" + i));
-        }
+    String tipFilmReflectorizant;
+    if (i % 2 == 0) {
+        tipFilmReflectorizant = "FilmUV";
+    } else {
+        tipFilmReflectorizant = "Film" + i;
+    }
+    reflectorizantList.add(new TermopanReflectorizant(
+        "Material" + i,
+        i + 1,
+        "TipSticla" + i,
+        tipFilmReflectorizant
+    ));
+}
 
         System.out.println("Instante Termopane:");
         for (Termopane termopan : termopaneList) {
             System.out.println(termopan);
         }
 
-        System.out.println("\nInstanțe TermopanIzolantTermic:");
+        System.out.println("\nInstante TermopanIzolantTermic:");
         for (TermopanIzolantTermic izolant : izolantList) {
             System.out.println(izolant);
         }
@@ -61,5 +72,30 @@ public class Facultate {
         System.out.println(rf1);
         System.out.println(rf2);
         System.out.println(rf3);
+        
+        
+        System.out.println("Termopane cu numar de straturi > 5:");
+        for (Termopane termopan : termopaneList) {
+            if (termopan.getNumarStraturi() > 5) {
+                System.out.println(termopan);
+            }
+        }
+
+        System.out.println("\nTermopanIzolantTermic cu coeficient de izolare mai mare");
+        for (TermopanIzolantTermic izolant : izolantList) {
+            if (izolant.getCoeficientIzolare() > 3.0) {
+                System.out.println(izolant);
+            }
+        }
+
+        System.out.println("\nTermopanReflectorizant cu film reflectorizant care contine UV:");
+        for (TermopanReflectorizant reflectorizant : reflectorizantList) {
+            if (reflectorizant.getTipFilmReflectorizant().contains("UV")) {
+                System.out.println(reflectorizant);
+            }
+        }
     }
 }
+    
+    
+
