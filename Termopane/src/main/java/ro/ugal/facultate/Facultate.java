@@ -73,13 +73,6 @@ public class Facultate {
         System.out.println(rf2);
         System.out.println(rf3);
         
-        
-        System.out.println("Termopane cu numar de straturi > 5:");
-        for (Termopane termopan : termopaneList) {
-            if (termopan.getNumarStraturi() > 5) {
-                System.out.println(termopan);
-            }
-        }
 
         System.out.println("\nTermopanIzolantTermic cu coeficient de izolare mai mare");
         for (TermopanIzolantTermic izolant : izolantList) {
