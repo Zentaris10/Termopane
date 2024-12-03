@@ -83,14 +83,14 @@ public class Facultate {
 
         System.out.println("\nTermopanIzolantTermic cu coeficient de izolare mai mare");
         for (TermopanIzolantTermic izolant : izolantList) {
-            if (izolant.getCoeficientIzolare() > 3.0) {
+            if (izolant.getCoeficientIzolare() > 3.0 && izolant.getNumarStraturi() != 2 {
                 System.out.println(izolant);
             }
         }
 
         System.out.println("\nTermopanReflectorizant cu film reflectorizant care contine UV:");
         for (TermopanReflectorizant reflectorizant : reflectorizantList) {
-            if (reflectorizant.getTipFilmReflectorizant().contains("UV")) {
+            if (reflectorizant.getTipFilmReflectorizant().contains("UV") && reflectorizant.getTipSticla() == "Fumuriu" {
                 System.out.println(reflectorizant);
             }
         }
